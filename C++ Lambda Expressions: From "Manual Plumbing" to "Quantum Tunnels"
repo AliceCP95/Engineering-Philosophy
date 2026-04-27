@@ -4,7 +4,7 @@ To understand the power of Lambdas, let's process a vector of exam scores: {65, 
  1.	Task A (Filter): Count how many students failed (< 60).
  2.	Task B (Update): Give everyone a 5-point bonus.
 
-**1. The Old Way: "Fragmented & Heavy"**
+** 1. The Old Way: "Fragmented & Heavy" **
 To truly appreciate Lambdas, we must look at the "Old Way" of passing external data (like a bonus score) into a function. Before C++11, your logic was scattered. To pass external data (like a bonus score) into a function, You had to build a "structure" (a custom tool) and a Constructor just to move one variable. This is "Manual Plumbing".
 ```
 cpp
