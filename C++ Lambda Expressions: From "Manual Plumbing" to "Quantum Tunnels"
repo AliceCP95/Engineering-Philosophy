@@ -6,8 +6,8 @@ To understand the power of Lambdas, let's process a vector of exam scores: {65, 
 
 **1. The Old Way: "Fragmented & Heavy"**
 To truly appreciate Lambdas, we must look at the "Old Way" of passing external data (like a bonus score) into a function. Before C++11, your logic was scattered. To pass external data (like a bonus score) into a function, You had to build a "structure" (a custom tool) and a Constructor just to move one variable. This is "Manual Plumbing".
-
-```cpp
+```
+cpp
 // --- Fragmented Logic Outside Main ---
 bool isFailed(int s) { return s < 60; } // Helper for Task A
 
@@ -40,7 +40,8 @@ In this context, AddBonus(int b) : bonus(b) is the "Manual Plumbing" required to
 
 **2. The Modern Way: "Integrated & Clean"**
 With Lambdas, the "Plumbing" that entire struct and its constructor is replaced by a single "pocket" []. In the Modern way, you are the Director. You tell the compiler what you want captured, and it handles the how. This is the "Quantum Tunnel." 
-```cpp
+```
+cpp
 int main() {
     std::vector<int> scores = {65, 42, 98, 55, 76, 30};
 
@@ -57,9 +58,9 @@ int main() {
 }
 ```
 Where did the AddBonus(int b) : bonus(b) go? The compiler wrote it for you. When you write [bonus], the C++ compiler silently:
-1.	Generates a hidden Class (e.g., an anonymous struct AddBonus { ... };).
-2.	Creates a Member Variable to store the value (e.g., int bonus;).
-3.	Automatically writes the Constructor to move the external value into the internal logic (e.g., AddBonus(int b) : bonus(b) {}).
+ 1.	Generates a hidden Class (e.g., an anonymous struct AddBonus { ... };).
+ 2.	Creates a Member Variable to store the value (e.g., int bonus;).
+ 3.	Automatically writes the Constructor to move the external value into the internal logic (e.g., AddBonus(int b) : bonus(b) {}).
 
 **3.There are Critical Knowledge & Syntax**
 •	Syntax Pattern: [ Capture ] ( Parameters ) { Logic }
